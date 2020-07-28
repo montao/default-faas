@@ -5,7 +5,7 @@ steps:
     args: ['go', 'test']
     dir: 'code'
   - name: 'gcr.io/cloud-builders/gcloud'
-    args: ['functions', 'deploy', 'cloudfunction02', '--region', 'europe-west1', '--trigger-http', '--runtime', 'go113', '--entry-point', 'HelloWorld']
+    args: ['functions', 'deploy', 'cloudfunction02', '--trigger-http', '--runtime', 'go113', '--entry-point', 'HelloWorld']
     dir: 'code'
   - name: 'gcr.io/cloud-builders/gcloud'
-    args: ['functions', 'add-iam-policy-binding', 'cloudfunction02', '--region', 'europe-west1', '--member', 'allUsers', '--role', 'roles/cloudfunctions.invoker']
+    args: ['functions', 'add-iam-policy-binding', 'cloudfunction02', '--member', 'allUsers', '--role', 'roles/cloudfunctions.invoker']
